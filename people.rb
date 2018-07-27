@@ -4,27 +4,32 @@ class Person
   end
 
   def greeting
-    return "Skrrr my name is #{name}"
+    puts "Skrrr my name is #{@name}"
   end
 end
 
 class Student < Person
   def learn
-    return "Skrrr I get it"
+    puts "Skrrr I get it"
   end
 end
 
 
 class Instructor < Person
   def teach
-    return "Everything in Ruby is Skrrrrr"
+    puts "Everything in Ruby is Skrrrrr"
   end
 end
 
-nadia = new.Instructor('Nadia')
-chris = new.Student('Chris')
+nadia = Instructor.new("Nadia")
+chris = Student.new("Chris")
+
+nadia.greeting
+chris.greeting
 
 nadia.teach
 chris.learn
 
-#
+# following wont work because they are different classes although same parent
+# nadia.learn
+# chris.teach
